@@ -8,24 +8,16 @@ wrapper.appendChild(dialogWindow);
 wrapper.appendChild(input());
 
 function cliare() {
-    setTimeout(function() {
-        let erea = document.querySelector('textarea');
-        erea.value = " ";
-    }, 1000)
-
-}
-
-
-
-async function user() {
     let erea = document.querySelector('textarea');
-    let ereaValue = erea.value;
-    dialog("user1", ereaValue);
-    await bott(arrBot);
-
+    erea.value = " ";
 }
 
-arrBot = ["привет", "как дела ?", "я отвечаю не в попад", "я твой первый тупой бот))"];
+
+
+
+
+
+
 
 // ********************************************************************
 function randomInteger(min, max) {
@@ -35,15 +27,20 @@ function randomInteger(min, max) {
 }
 // ***************************************************************
 
+function user() {
+    let erea = document.querySelector('textarea');
+    let ereaValue = erea.value;
+    dialog("user1", ereaValue);
+
+}
 
 
-function bott(arr) {
-
+function bott() {
+    arr = ["привет", "как дела ?", "я отвечаю не в попад", "я твой первый тупой бот))"];
     if (user) {
-        let out = "пока"
+
         let erea = document.querySelector('textarea');
         let ereaValue = erea.value;
-
 
         setTimeout(function() {
             if (ereaValue.search("пока") == true) {
@@ -51,8 +48,8 @@ function bott(arr) {
                 let button = document.querySelector('button');
                 button.disabled = "true";
                 button.style.opacity = "0.5"
-                button.innerHTML = "Чат отключен"
-                ж
+                button.innerHTML = "Чат отключен";
+
                 return;
             } else {
                 for (let i = 0; i < arr.length; i++) {
@@ -66,13 +63,33 @@ function bott(arr) {
 
 }
 
+
+
+
+
+async function a() {
+    await bott();
+
+}
+
+
+
+
+
+
 wrapper.appendChild(button("submit", "btn", "отправить"));
 document.querySelector("button").addEventListener("click", user);
 document.querySelector('button').addEventListener("click", cliare);
+document.querySelector("button").addEventListener("click", a);
 
 document.querySelector('body').addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         user();
+    }
+})
+document.querySelector('body').addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        a();
     }
 })
 document.querySelector('body').addEventListener("keyup", function(event) {

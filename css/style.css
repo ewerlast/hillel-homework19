@@ -1,0 +1,49 @@
+body {
+    box-sizing: border-box;
+    background-color: rgb(112, 53, 53);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 800px;
+    margin: 10px auto;
+    border: 2px solid red;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIkvr3zsRN1Z4YV12ZeUk3UHvEenfdNIvSaA&usqp=CAU");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ul {
+    width: 600px;
+    height: 250px;
+    border: 1px solid green;
+    background-color: black;
+    color: white;
+    font-size: 1.5em;
+    overflow: scroll;
+}
+
+textarea {
+    width: 600px;
+    height: 150px;
+    background-color: rgb(89, 98, 216);
+    color: white;
+    font-size: 1.5em;
+}
+
+button {
+    margin-top: 20px;
+    width: 250px;
+    height: 50px;
+    background-color: rgb(29, 7, 80);
+    color: white;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: rgb(115, 99, 175);
+}

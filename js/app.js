@@ -17,7 +17,7 @@ function cliare() {
 
 
 
-
+arrBot = ["привет", "как дела ?", "я отвечаю не в попад", "я твой первый тупой бот))"];
 
 // ********************************************************************
 function randomInteger(min, max) {
@@ -27,22 +27,22 @@ function randomInteger(min, max) {
 }
 // ***************************************************************
 
-function user() {
+async function user() {
     let erea = document.querySelector('textarea');
     let ereaValue = erea.value;
-    dialog("user1", ereaValue);
+    await dialog("user1", ereaValue);
 
 }
 
 
-function bott() {
+async function bott() {
     arr = ["привет", "как дела ?", "я отвечаю не в попад", "я твой первый тупой бот))"];
     if (user) {
 
         let erea = document.querySelector('textarea');
         let ereaValue = erea.value;
 
-        setTimeout(function() {
+        await setTimeout(function() {
             if (ereaValue.search("пока") == true) {
                 alert("До новых встречь");
                 let button = document.querySelector('button');
@@ -67,10 +67,13 @@ function bott() {
 
 
 
-async function a() {
-    await bott();
+// async function a() {
+//     await bott();
 
-}
+// }
+// async function b() {
+//     await user()
+// }
 
 
 
@@ -78,18 +81,18 @@ async function a() {
 
 
 wrapper.appendChild(button("submit", "btn", "отправить"));
-document.querySelector("button").addEventListener("click", user);
+document.querySelector("button").addEventListener("click", bott);
 document.querySelector('button').addEventListener("click", cliare);
-document.querySelector("button").addEventListener("click", a);
+document.querySelector("button").addEventListener("click", user);
 
 document.querySelector('body').addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
-        user();
+        bott();
     }
 })
 document.querySelector('body').addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
-        a();
+        user();
     }
 })
 document.querySelector('body').addEventListener("keyup", function(event) {
